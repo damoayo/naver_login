@@ -1,0 +1,119 @@
+
+/* 베이스 세팅 */
+body {
+        line-height: 1.5em;
+        margin: 0;
+        background-color: #eee;
+        font-size: 15px; /* 기본이 16px이라 좀 작게 */
+        color: #222;
+      }
+
+      header {
+        /* Band부분 */
+        border-bottom: 1px solid lightgray;
+        background-color: #fff;
+        height: 60px;
+        text-align: center;
+        padding-top: 13px;
+        /* height와 padding값 합치기 우리가 배운 box-sizing */
+        box-sizing: border-box;
+      }
+      section {
+        /* border: 1px solid red; */
+        /* height: 100vh;  */
+        /* 높이를 100으로 했는데 위에서 Band부분 +60을해서 스크롤이 생겼을거에요. 그래서 calc함수를 사용해서 높이를 100vh로 유지를 해주는게 좋을거에요. */
+        height: calc(100vh - 60px);
+
+        /* section 안의 요소를 중앙정열 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .login {
+        /* border: 1px solid red; */
+        width: 360px;
+      }
+
+      .login-type h1 {
+        margin-top: 0;
+        font-size: 38px;
+        text-align: center;
+        /* h태그값의 bold를 바꿈 */
+        font-weight: normal;
+      }
+      .login-type > a {
+        border: 1px solid lightgray;
+        display: block;
+        text-align: center;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        font-size: 18px;
+        color: #fff;
+        opacity: 0.8;
+      }
+      .login-type > a:hover {
+        /* 마우스오버 되면 색이 약간 변하는 효과 */
+        opacity: 1;
+      }
+      .login-type > a:nth-of-type(1) {
+        /* background-color: #fff; 요기에 적으면 밑에서 덮어쓰기 때문*/
+        color: #222;
+        background-image: url(./src/logo-mobile.png);
+        background-repeat: no-repeat;
+        background-position: center left 10px;
+        /* 밑에내용은 각각 따로 써도 되고, 한줄로도 적을수 있음 */
+        /* 한줄로 적을때는 background color값을 꼭 넣어주어야함 */
+        background: #fff url(./src/logo-mobile.png) no-repeat center left 10px;
+      }
+      .login-type > a:nth-of-type(2) {
+        background: #898c9b url(./src/logo-email.png) no-repeat center left 13px;
+      }
+      .login-type > a:nth-of-type(3) {
+        background: #11ce00 url(./src/logo-naver.png) no-repeat center left 13px;
+      }
+      .login-type > a:nth-of-type(4) {
+        background: #0076fe url(./src/logo-facebook.png) no-repeat center left 13px;
+      }
+      .login-type > a:nth-of-type(5) {
+        background: #00c026 url(./src/logo-line.png) no-repeat center left 10px;
+      }
+
+      .login-type > span {
+        display: block;
+        text-align: center;
+        margin-bottom: 10px;
+        /* befor,ater요소의 부모요소이기 때문에 */
+        position: relative;
+      }
+
+      /* 중복되는 부분 */
+      .login-type span::before,
+      .login-type span::after {
+        content: '';
+        background-color: lightgray;
+        height: 1px;
+        width: 44%;
+        position: absolute;
+        top: 9px;
+      }
+      .login-type > span::before {
+        left: 0;
+      }
+      .login-type > span::after {
+        right: 0;
+      }
+
+      .login-footer p {
+        text-align: center;
+      }
+      .login-footer p a {
+        font-weight: 500;
+        text-decoration: none;
+      }
+      .login-footer p a:hover {
+        text-decoration: underline;
+      }
+      .login-type a {
+        text-decoration: none;
+      }
